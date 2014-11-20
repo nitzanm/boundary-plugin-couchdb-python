@@ -1,0 +1,53 @@
+{
+    "description": "Monitors CouchDB",
+    "command": "python -u plugin.py",
+    "icon" : "icon.png",
+    "metrics" : [
+        "COUCHDB_HTTPD_201",
+        "COUCHDB_HTTPD_200",
+        "COUCHDB_HTTPD_202",
+        "COUCHDB_HTTPD_401",
+        "COUCHDB_HTTPD_301",
+        "COUCHDB_HTTPD_304",
+        "COUCHDB_HTTPD_405",
+        "COUCHDB_HTTPD_404",
+        "COUCHDB_HTTPD_403",
+        "COUCHDB_HTTPD_500",
+        "COUCHDB_HTTPD_412",
+        "COUCHDB_HTTPD_400",
+        "COUCHDB_HTTPD_409",
+        "COUCHDB_HTTPD_BULK_REQUESTS",
+        "COUCHDB_CLIENTS_REQUESTING_CHANGES",
+        "COUCHDB_VIEW_READS",
+        "COUCHDB_REQUESTS",
+        "COUCHDB_TEMPORARY_VIEW_READS",
+        "COUCHDB_OPEN_OS_FILES",
+        "COUCHDB_AUTH_CACHE_HITS",
+        "COUCHDB_DATABASE_READS",
+        "COUCHDB_OPEN_DATABASES",
+        "COUCHDB_AUTH_CACHE_MISSES",
+        "COUCHDB_DATABASE_WRITES",
+        "COUCHDB_REQUEST_TIME",
+        "COUCHDB_REQUEST_HEAD",
+        "COUCHDB_REQUEST_GET",
+        "COUCHDB_REQUEST_PUT",
+        "COUCHDB_REQUEST_POST",
+        "COUCHDB_REQUEST_COPY",
+        "COUCHDB_REQUEST_DELETE"],
+
+    "dashboards" : [{"name" : "Dummy CouchDB",
+        "layout" : 
+"d-w=4&d-h=2&d-pad=5&d-bg=none&d-g-NEM_RIAK_CONSISTENT_GETS=0-0-1-1-t&d-g-NEM_RIAK_CONSISTENT_PUTS=0-0-1-1-b&d-g-NEM_RIAK_CONSISTENT_GET_OBJSIZE_MEAN=1-0-1-1-t&d-g-NEM_RIAK_CONSISTENT_PUT_OBJSIZE_MEAN=1-0-1-1-b&d-g-NEM_RIAK_CONSISTENT_GET_TIME_MEAN=2-0-1-1-t&d-g-NEM_RIAK_CONSISTENT_PUT_TIME_MEAN=2-0-1-1-b&d-g-NEM_RIAK_CONVERGE_DELAY_MEAN=3-0-1-1&d-g-NEM_RIAK_NODE_GET_FSM_IN_RATE=0-1-1-1-t&d-g-NEM_RIAK_NODE_GET_FSM_OUT_RATE=0-1-1-1-b&d-g-NEM_RIAK_NODE_PUT_FSM_IN_RATE=1-1-1-1-t&d-g-NEM_RIAK_NODE_PUT_FSM_OUT_RATE=1-1-1-1-b&d-g-NEM_RIAK_NODE_GET_FSM_TIME_MEAN=2-1-1-1-t&d-g-NEM_RIAK_NODE_PUT_FSM_TIME_MEAN=2-1-1-1-b&d-g-NEM_RIAK_NODE_GETS=3-1-1-1-t&d-g-NEM_RIAK_NODE_PUTS=3-1-1-1-b" }],
+
+    "paramSchema": [
+        {
+            "title": "CouchDB Stats URL",
+            "name": "stats_url",
+            "description": "The URL to CouchDB's stats API endpoint",
+            "type": "string",
+            "default": "http://127.0.0.1:5984/_stats",
+            "required": true
+        }
+    ]
+}
+
