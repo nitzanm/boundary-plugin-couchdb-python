@@ -10,12 +10,12 @@ import boundary_plugin
 import boundary_accumulator
 
 """
-If getting statistics from Riak fails, we will retry up to this number of times before
+If getting statistics fails, we will retry up to this number of times before
 giving up and aborting the plugin.  Use 0 for unlimited retries.
 """
 PLUGIN_RETRY_COUNT = 0
 """
-If getting statistics from Riak fails, we will wait this long (in seconds) before retrying.
+If getting statistics fails, we will wait this long (in seconds) before retrying.
 """
 PLUGIN_RETRY_DELAY = 5
 
@@ -43,11 +43,11 @@ class CouchDBPlugin(object):
             try:
                 return self.get_stats(*args, **kwargs)
             except Exception as e:
-                logging.error("Error retrieving Riak data: %s" % e)
+                logging.error("Error retrieving data: %s" % e)
                 time.sleep(PLUGIN_RETRY_DELAY)
 
-        logging.fatal("Max retries exceeded retrieving Riak data")
-        raise Exception("Max retries exceeded retrieving Riak data")
+        logging.fatal("Max retries exceeded retrieving data")
+        raise Exception("Max retries exceeded retrieving data")
 
     @staticmethod
     def get_metric_list():
